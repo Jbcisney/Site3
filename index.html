@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno da Vila — Pizzaria Rústica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="hd">
+  <a class="logo" href="#topo">Forno <span>da</span> Vila</a>
+  <nav><a href="#cardapio">Cardápio</a><a href="#reservas">Reservas</a><a href="#contato">Contato</a></nav>
+  <button class="cartbtn" id="openCart" aria-label="Abrir carrinho">Carrinho <b id="count">0</b></button>
+</div></header>
+
+<div class="hero" id="topo"><div class="w">
+  <div class="tag">Pizzaria de forno a lenha</div>
+  <h1>Massa de fermentação lenta, fogo de lenha e ingredientes de verdade.</h1>
+  <p>Venha jantar no salão ou peça em casa. Aberto de terça a domingo, a partir das 18h.</p>
+  <a class="btn" href="#cardapio">Ver cardápio</a><a class="btn o" href="#reservas">Reservar mesa</a>
+</div></div>
+
+<section id="cardapio"><div class="w">
+  <div class="sh"><h2>Cardápio</h2><p>Disponível no salão (à la carte) e para delivery ou retirada.</p></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="menu"></div>
+</div></section>
+
+<section id="reservas" class="alt"><div class="w">
+  <div class="sh"><h2>Reserva de Mesas</h2><p>Garanta seu lugar no salão. Confirmamos pelo WhatsApp.</p></div>
+  <form class="card bk" id="rform" novalidate><div class="f">
+    <div><label for="rn">Nome</label><input id="rn" autocomplete="name"></div>
+    <div><label for="rp">Telefone / WhatsApp</label><input id="rp" type="tel" autocomplete="tel"></div>
+    <div><label for="rd">Data</label><input id="rd" type="date"></div>
+    <div><label for="rt">Horário</label><select id="rt"></select></div>
+    <div><label for="rq">Pessoas</label><select id="rq"></select></div>
+    <div><label for="ro">Observações</label><input id="ro" placeholder="Aniversário, cadeirinha..."></div>
+    <div class="full"><button class="btn" type="submit">Solicitar reserva</button></div>
+  </div><div class="msg" id="rmsg" role="status"></div></form>
+</div></section>
+
+<section id="contato"><div class="w">
+  <div class="sh"><h2>Onde Estamos</h2></div>
+  <div class="grid">
+    <div class="card info"><h3>Endereço</h3><p>Rua do Ouro, 120 — Centro<br>Tiradentes, MG · 36325-000</p><a href="https://www.google.com/maps/search/?api=1&query=Rua+do+Ouro+120+Tiradentes+MG" target="_blank" rel="noopener">Ver no mapa →</a></div>
+    <div class="card info"><h3>Horários</h3><p>Ter a Qui · 18h às 23h<br>Sex e Sáb · 18h à 00h<br>Dom · 12h às 22h<br>Segunda · fechado</p></div>
+    <div class="card info"><h3>Contato</h3><p>Telefone: <a href="tel:+553235000000">(32) 3500-0000</a><br>WhatsApp: <a href="https://wa.me/5532935000000" target="_blank" rel="noopener">(32) 93500-0000</a><br>Instagram: <a href="#topo">@fornodavila</a><br>Email: <a href="mailto:ola@fornodavila.example">ola@fornodavila.example</a></p></div>
+  </div>
+</div></section>
+
+<footer>© 2026 Forno da Vila — Empresa fictícia para fins de demonstração.</footer>
+
+<div class="ov" id="ov"></div>
+<aside class="cart" id="cart" aria-label="Carrinho">
+  <div class="ch"><h3>Seu pedido</h3><button class="x" id="closeCart" aria-label="Fechar">×</button></div>
+  <div class="cb" id="items"></div>
+  <div class="cf" id="cfoot">
+    <div class="mode"><label><input type="radio" name="md" value="delivery" checked> Delivery</label><label><input type="radio" name="md" value="retirada"> Retirar no local</label></div>
+    <form id="oform" novalidate>
+      <input id="on" placeholder="Seu nome" autocomplete="name">
+      <input id="op" type="tel" placeholder="Telefone / WhatsApp" autocomplete="tel">
+      <div id="addr"><input id="oa" placeholder="Endereço completo (rua, nº, bairro)" autocomplete="street-address"></div>
+      <select id="opay"><option>Pix</option><option>Cartão na entrega</option><option>Dinheiro</option></select>
+      <input id="oo" placeholder="Observações do pedido">
+      <div class="tot"><span>Subtotal</span><span id="sub"></span></div>
+      <div class="tot"><span>Taxa de entrega</span><span id="fee"></span></div>
+      <div class="tot big"><span>Total</span><span id="tot"></span></div>
+      <button class="btn" type="submit">Enviar pedido pelo WhatsApp</button>
+      <div class="msg" id="omsg" role="status"></div>
+    </form>
+  </div>
+</aside>
+<script src="script.js"></script>
+</body>
+</html>
